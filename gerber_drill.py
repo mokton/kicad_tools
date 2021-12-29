@@ -266,7 +266,7 @@ def SplitSlotInDrill(drillPath, newfilename = True,step = 0.2):
                     hn,hs = HoleSize(line)
                     if hn and hs:
                         holes[hn+'\n'] = hs
-                    if holes.has_key(line):
+                    if line in holes: 
                         curHolesSize = holes[line]
                     step = 0.2
                     if curHolesSize:
