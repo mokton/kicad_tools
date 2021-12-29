@@ -24,7 +24,7 @@
 安装完成即可使用，找到 `工具` -> `外部插件` -> `Gen Manufacture Docs` 打开插件界面，点击插件界面上的 `Gen Manufacture Docs ` 按钮执行命令。
 
 ![desc](desc.png) 
-
+ 
 ### 生成文件
 
 当 `BOM List` `Positon File` `Gerber Files` 全选时，点击 `Generate Marnufacture Docs` 按钮后插件会一键生成 BOM 物料清单、坐标文件、Gerber 文件、钻孔文件。
