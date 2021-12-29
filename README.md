@@ -23,7 +23,7 @@
 
 安装完成即可使用，找到 `工具` -> `外部插件` -> `Gen Manufacture Docs` 打开插件界面，点击插件界面上的 `Gen Manufacture Docs ` 按钮执行命令。
 
-![desc](desc.png) 
+![desc](desc_ref.png) 
  
 ### 生成文件
 
