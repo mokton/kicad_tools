@@ -43,7 +43,7 @@ KiCad plot tool is forked from "https://github.com/blairbonnett-mirrors/kicad/bl
 
 S-Expression parse tool is forked from https://github.com/xtoolbox/kicad_tools.git
 
-   
+
 # Manufacture Tools for kicad
 
 Usage:
