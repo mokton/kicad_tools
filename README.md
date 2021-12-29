@@ -23,7 +23,7 @@
 
 安装完成即可使用，找到 `工具` -> `外部插件` -> `Gen Manufacture Docs` 打开插件界面，点击插件界面上的 `Gen Manufacture Docs ` 按钮执行命令。
 
-![desc](desc.png)
+![desc](desc.png) 
 
 ### 生成文件
 
@@ -41,9 +41,9 @@ GenMFDoc() 会改变电路板的钻孔原点，建议先用GenMFDoc() 生成 BOM
 
 KiCad plot tool is forked from "https://github.com/blairbonnett-mirrors/kicad/blob/master/demos/python_scripts_examples/gen_gerber_and_drill_files_board.py"
 
-S-Expression parse tool is forked from https://github.com/tkf/sexpdata
+S-Expression parse tool is forked from https://github.com/xtoolbox/kicad_tools.git
 
-
+   
 # Manufacture Tools for kicad
 
 Usage:
