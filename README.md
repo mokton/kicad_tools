@@ -8,11 +8,11 @@
 
 ### 安装
 
-适用于：KiCad EDA 5.1.0 +
+适用于：KiCad EDA 6.0
 
 * Windows 安装命令
     ```
-    git clone https://github.com/xtoolbox/kicad_tools.git %appdata%/kicad/scripting/plugins/kicad_tools
+    git clone https://github.com/zfeng129/kicad_tools.git %appdata%/kicad/scripting/plugins/kicad_tools
     ```
 * Linux 安装命令
     ```
