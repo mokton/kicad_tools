@@ -4,7 +4,7 @@ Created on Tue May 12 10:08:59 2020
 """
 
 import io
-
+ 
 QUOTE = {
         "'":"'",
         '"':'"',        

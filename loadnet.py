@@ -2,7 +2,7 @@ import kisexp as sexp
 import pcbnew as pn
 import io
 import traceback
-
+ 
 def loadNet(brd = None):
     if not brd:
         brd = pn.GetBoard()

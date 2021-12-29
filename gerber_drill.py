@@ -25,7 +25,7 @@ import os
 import re
 import math
 import zipfile as zf
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(os.path.dirname(os.path.realpath(__file__))) 
 from pcbnew import *
 def def_logger(*args):
     r = ""

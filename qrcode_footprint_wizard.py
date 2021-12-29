@@ -17,7 +17,7 @@
 
 import pcbnew
 import FootprintWizardBase
-
+ 
 # Additional import for QRCode
 # see https://github.com/kazuhikoarase/qrcode-generator/blob/master/python/qrcode.py
 import qrcode

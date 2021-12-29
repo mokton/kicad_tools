@@ -5,7 +5,7 @@ import csv
 import re
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))  
 import gerber_drill as gd
 import wx
 import io

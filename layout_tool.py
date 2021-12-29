@@ -5,7 +5,7 @@ import csv
 import re
 import sys
 import os
-
+  
 def MakeRefs(refs):
     '''
     Transform reference string 'R1-3,6-8,J1,2,5-7' 
