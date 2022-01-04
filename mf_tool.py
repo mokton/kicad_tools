@@ -80,7 +80,8 @@ class RefBuilder:
     def collect(self, ref):
         m = self.patten.match(ref)
         if m:
-            if not self.refMap.has_key(m.group(1)):
+            # if not self.refMap.has_key(m.group(1)):
+            if m.group(1) not in self.refMap:
                 self.refMap[m.group(1)] = m.group(2)
             else:
                 max = self.refMap[m.group(1)]
@@ -94,10 +95,12 @@ class RefBuilder:
         if not m:
             print('Ref is invalid ',oldRef)
             return None
-        if self.builtMap.has_key(oldRef):
+        # if self.builtMap.has_key(oldRef):
+        if oldRef in self.builtMap:
             return self.builtMap[oldRef]
         newRef = ''
-        if not self.refMap.has_key(m.group(1)):
+        # if not self.refMap.has_key(m.group(1)):
+        if m.group(1) not in self.refMap:
             self.refMap[m.group(1)] = m.group(2)
             newRef = oldRef
         else:
@@ -383,15 +386,20 @@ class BOMItem:
         self.url = ""
         self.libRef = "libref"
         if netList:
-            if netList.has_key(self.netKey):
+            # if netList.has_key(self.netKey):
+            if self.netKey in self.netKey:
                 comp = netList[self.netKey]
-                if comp.has_key('partNumber'):
+                # if comp.has_key('partNumber'):
+                if 'partNumber' in comp:
                     self.partNumber = comp['partNumber']
-                if comp.has_key('description'):
+                # if comp.has_key('description'):
+                if 'description' in comp:
                     self.desc = comp['description']
-                if comp.has_key('datasheet'):
+                # if comp.has_key('datasheet'):
+                if 'datasheet' in comp:
                     self.url = comp['datasheet']
-                if comp.has_key('comment'):
+                # if comp.has_key('comment'):
+                if 'comment' in comp:
                     self.libRef = self.value
                     self.value = comp['comment']
             else:
