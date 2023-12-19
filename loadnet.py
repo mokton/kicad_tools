@@ -35,7 +35,10 @@ def parseComp(comp):
             for j in range(1, len(fields)):
                 field = fields[j]
                 fkey = toStr(field[1][1])
+                # print(field)
                 if fkey == "SuppliersPartNumber":
+                    r['partNumber'] = toStr(field[2])
+                if fkey == "商品编号":
                     r['partNumber'] = toStr(field[2])
                 if fkey == "Comment":
                     r['comment'] = toStr(field[2])

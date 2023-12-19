@@ -389,6 +389,7 @@ class BOMItem:
             # if netList.has_key(self.netKey):
             if self.netKey in self.netKey:
                 comp = netList[self.netKey]
+                print(comp)
                 # if comp.has_key('partNumber'):
                 if 'partNumber' in comp:
                     self.partNumber = comp['partNumber']
@@ -462,9 +463,9 @@ def GenBOM(brd = None, layer = pcbnew.F_Cu, type = 1, ExcludeRefs = [], ExcludeV
 
 def layerName(layerId):
     if layerId == pcbnew.F_Cu:
-       return 'T'
+        return 'T'
     if layerId == pcbnew.B_Cu:
-       return 'B'
+        return 'B'
     return 'X'
 def toMM(v):
     return str(v/1000000.0) + 'mm'
@@ -482,7 +483,8 @@ class POSItem:
             print('Pad1 not found for mod')
             self.PadX = self.MidX
             self.PadY = self.MidY
-        self.rot = int(mod.GetOrientation()/10)
+        # self.rot = int(mod.GetOrientation()/10)
+        self.rot = int(mod.GetOrientation().AsDegrees())
         self.ref = mod.GetReference()
         self.val = mod.GetValue()
         self.layer = layerName(mod.GetLayer())
@@ -516,18 +518,18 @@ def PrintBOM(boms):
     OutputBOMHeader()
     i = 1
     for bom in boms:
-       print('BOM items for BOM', i)
-       i = i + 1
-       for k,v in bom.items():
-           v.Output()
+        print('BOM items for BOM', i)
+        i = i + 1
+        for k,v in bom.items():
+            v.Output()
 def PrintPOS(Poses):
     OutputPosHeader()
     i = 1
     for pos in Poses:
-       print('Pos items ', i)
-       i = i+ 1
-       for v in pos:
-           v.Output()
+        print('Pos items ', i)
+        i = i+ 1
+        for v in pos:
+            v.Output()
 def CollectItemByName(filename = None):
     try:
         brd = pcbnew.LoadBoard(filename)
@@ -657,7 +659,7 @@ def GenMFDoc(SplitTopAndBottom = False, ExcludeRef = [], ExcludeValue = [], brd 
                 csv.writerow(['Through Hole Items '])
                 for v in posHoleTop:
                     v.Output(csv)
-           
+        
         bomName = path + '/' + fName + '_BOM_BOT.csv'
         posName = path + '/' + fName + '_POS_BOT.csv'
         if needGenBOM:
@@ -693,14 +695,14 @@ def GenMFDoc(SplitTopAndBottom = False, ExcludeRef = [], ExcludeValue = [], brd 
             OutputBOMHeader(csv)
             for v in bomSMDTop:
                 v.Output(csv)
-               
+            
             for  v in bomSMDBot:
                 v.Output(csv)
             if len(bomHoleTop)+len(bomHoleBot)>0:
                 csv.writerow(['Through Hole Items '])
                 for v in bomHoleTop:
                     v.Output(csv)
-                   
+                
                 for v in bomHoleBot:
                     v.Output(csv)
         
@@ -712,14 +714,14 @@ def GenMFDoc(SplitTopAndBottom = False, ExcludeRef = [], ExcludeValue = [], brd 
             OutputPosHeader(csv)
             for v in posSMDTop:
                 v.Output(csv)
-               
+
             for v in posSMDBot:
                 v.Output(csv)
             if len(posHoleTop)+len(posHoleBot)>0:
                 csv.writerow(['Through Hole Items '])
                 for v in posHoleTop:
                     v.Output(csv)
-                   
+                
                 for v in posHoleBot:
                     v.Output(csv)
     return bomName, posName
@@ -740,7 +742,7 @@ def GenSMTFiles():
     
 class MFDialog(wx.Dialog):
     def __init__(self):
-        wx.Dialog.__init__(self, None, -1, 'Generate Manufacture docs', size=(800, 430))
+        wx.Dialog.__init__(self, None, -1, 'Generate Manufacture docs', size=(850, 450))
 
         self.chkBOM = wx.CheckBox(self, label = "BOM List", pos = (15, 10))
         self.chkPos = wx.CheckBox(self, label = "Positon File ", pos = (15, 30))
@@ -749,8 +751,8 @@ class MFDialog(wx.Dialog):
         self.chkSplitSlot = wx.CheckBox(self, label = "Split Slot", pos = (280, 50))
         self.chkBOM.SetValue(True)
         self.chkPos.SetValue(True)
-        self.chkGerber.SetValue(True)
-        self.chkPlotRef.SetValue(True)
+        self.chkGerber.SetValue(False)
+        self.chkPlotRef.SetValue(False)
         self.chkSplitSlot.SetValue(False)
 
         self.static_text = wx.StaticText(self, -1, 'Log:', style=wx.ALIGN_CENTER, pos = (15, 90))
