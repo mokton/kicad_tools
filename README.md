@@ -8,11 +8,11 @@
 
 ### 安装
 
-适用于：KiCad EDA 6.0
+适用于：KiCad EDA 7.0
 
 * Windows 安装命令
     ```
-    git clone https://github.com/zfeng129/kicad_tools.git %appdata%/kicad/scripting/plugins/kicad_tools
+    git clone https://github.com/mokton/kicad_tools.git %HOMEPATH%/Documents/KiCad/7.0/3rdparty/plugins/kicad_tools
     ```
 * Linux 安装命令
     ```
@@ -24,7 +24,7 @@
 安装完成即可使用，找到 `工具` -> `外部插件` -> `Gen Manufacture Docs` 打开插件界面，点击插件界面上的 `Gen Manufacture Docs ` 按钮执行命令。
 
 ![desc](desc.gif) 
- 
+
 ### 生成文件
 
 当 `BOM List` `Positon File` `Gerber Files` 全选时，点击 `Generate Marnufacture Docs` 按钮后插件会一键生成 BOM 物料清单、坐标文件、Gerber 文件、钻孔文件。
